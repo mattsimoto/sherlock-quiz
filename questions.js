@@ -1,62 +1,11 @@
-const LEVELS=[
-{id:1,rank:"The Beginning",title:"The New Lodger",description:"Holmes, Watson, Baker Street, and the foundations of the Canon.",points:10,questions:[
-{type:"mc",q:"At what London address do Holmes and Watson share rooms?",options:["221B Baker Street","23 Montague Street","10 Downing Street","7B Praed Street"],answer:0,explanation:"Mrs. Hudson's famous rooms at 221B Baker Street become the center of Holmes and Watson's adventures."},
-{type:"mc",q:"What is Dr. Watson's first name?",options:["James","John","Henry","Arthur"],answer:1,explanation:"The narrator and companion of Holmes is Dr. John H. Watson."},
-{type:"mc",q:"In which novel do Holmes and Watson first meet?",options:["The Sign of Four","The Hound of the Baskervilles","A Study in Scarlet","The Valley of Fear"],answer:2,explanation:"A Study in Scarlet introduces both men and recounts their first meeting."},
-{type:"text",q:"What is the surname of Sherlock Holmes's older brother?",accept:["Mycroft","Mycroft Holmes"],explanation:"Mycroft Holmes is Sherlock's older brother and possesses remarkable powers of observation and deduction."},
-{type:"mc",q:"Which instrument does Sherlock Holmes play?",options:["Cello","Piano","Violin","Clarinet"],answer:2,explanation:"Holmes is a violinist and often plays while thinking over a case."},
-{type:"mc",q:"Where did Watson serve as an army doctor before returning to London?",options:["India","Afghanistan","Egypt","South Africa"],answer:1,explanation:"Watson was wounded during military service in Afghanistan before returning to England."},
-{type:"mc",q:"Who is Holmes and Watson's landlady?",options:["Mrs. Hudson","Mrs. Turner","Mrs. Forrester","Mrs. St. Clair"],answer:0,explanation:"Mrs. Hudson is the long-suffering landlady of 221B Baker Street."},
-{type:"text",q:"What is the first name of Inspector Lestrade?",accept:["G","G."],explanation:"Conan Doyle identifies the Scotland Yard detective as G. Lestrade; the Canon never expands the initial."},
-{type:"mc",q:"Which profession best describes Holmes?",options:["Barrister","Consulting detective","Police inspector","Journalist"],answer:1,explanation:"Holmes calls himself a consulting detective, assisting clients and official detectives with difficult cases."},
-{type:"mc",q:"Who narrates most Sherlock Holmes stories?",options:["Holmes","Lestrade","Watson","Mycroft"],answer:2,explanation:"Dr. Watson is the principal narrator and chronicler of Holmes's cases."}
-]},
-{id:2,rank:"Apprentice",title:"A Scandal in Bohemia",description:"Irene Adler, royal secrets, disguises, and Holmes's famous defeat.",points:10,questions:[
-{type:"mc",q:"How does Holmes famously refer to Irene Adler?",options:["The Woman","The Adventuress","The American","The Singer"],answer:0,explanation:"Watson opens the story by explaining that to Sherlock Holmes, Irene Adler is always 'the woman.'"},
-{type:"mc",q:"What is Irene Adler's profession?",options:["Actress","Opera singer","Journalist","Governess"],answer:1,explanation:"Adler is described as a contralto who has performed at La Scala and other opera houses."},
-{type:"mc",q:"The King who consults Holmes rules which country?",options:["Bavaria","Bohemia","Belgium","Denmark"],answer:1,explanation:"The masked visitor reveals himself as the hereditary King of Bohemia."},
-{type:"text",q:"What object is Holmes hired to recover from Irene Adler?",accept:["photograph","a photograph","photo","a photo"],explanation:"The King wants Holmes to recover a compromising photograph showing him together with Irene Adler."},
-{type:"mc",q:"Whom does Irene Adler marry?",options:["Godfrey Norton","John Clay","Victor Hatherley","Percy Phelps"],answer:0,explanation:"Holmes witnesses Irene Adler's hurried marriage to the barrister Godfrey Norton."},
-{type:"mc",q:"What false emergency does Holmes arrange to discover the photograph's hiding place?",options:["A burglary","A fire","A gas leak","A riot"],answer:1,explanation:"A staged cry of fire prompts Adler instinctively to reveal where her most valuable possession is hidden."},
-{type:"mc",q:"What disguise does Holmes use when he enters Adler's home?",options:["A clergyman","A sailor","A policeman","A physician"],answer:0,explanation:"Holmes disguises himself as an amiable clergyman as part of the scheme at Briony Lodge."},
-{type:"text",q:"What is the name of Irene Adler's residence?",accept:["Briony Lodge","Briony"],explanation:"Irene Adler lives at Briony Lodge in Serpentine Avenue."},
-{type:"mc",q:"What does Adler leave behind for Holmes?",options:["A ring","A letter and photograph","A revolver","A diary"],answer:1,explanation:"Adler leaves a letter explaining that she recognized Holmes, along with a photograph of herself."},
-{type:"mc",q:"What reward does Holmes choose from the King?",options:["An emerald","A title","Irene's photograph","A gold watch"],answer:2,explanation:"Rather than the King's jeweled ring, Holmes asks for the photograph Irene left behind."}
-]},
-{id:3,rank:"Investigator",title:"The Speckled Band",description:"A locked room, a terrified sister, and one of Holmes's darkest investigations.",points:20,questions:[
-{type:"mc",q:"Who comes to Holmes fearing for her life?",options:["Helen Stoner","Violet Hunter","Mary Morstan","Kitty Winter"],answer:0,explanation:"Helen Stoner seeks Holmes after her twin sister's mysterious death and disturbing events at Stoke Moran."},
-{type:"text",q:"What were Julia Stoner's final words?",accept:["the speckled band","speckled band"],explanation:"Julia's dying words, 'the speckled band,' become the central clue in the mystery."},
-{type:"mc",q:"Who is Helen Stoner's stepfather?",options:["Dr. Grimesby Roylott","Dr. Percy Trevelyan","Dr. Sterndale","Dr. Mortimer"],answer:0,explanation:"The violent Dr. Grimesby Roylott lives with the Stoner sisters at Stoke Moran."},
-{type:"mc",q:"What unusual feature does Holmes notice about the bell-rope?",options:["It is cut in half","It does not ring a bell","It is made of wire","It runs outside"],answer:1,explanation:"The bell-rope is a dummy; it provides a route down toward the bed rather than operating a bell."},
-{type:"mc",q:"What is peculiar about the bed in Helen's room?",options:["It is unusually short","It is bolted to the floor","It contains a hidden drawer","It faces the wrong direction"],answer:1,explanation:"The bed is fastened in place so its occupant must sleep directly beneath the ventilator and bell-rope."},
-{type:"text",q:"What animal is the 'speckled band'?",accept:["snake","a snake","swamp adder","a swamp adder"],explanation:"Holmes identifies Roylott's deadly creature as a swamp adder, described in the story as an Indian snake."},
-{type:"mc",q:"Where does the snake travel from Roylott's room?",options:["Through a fireplace","Through a ventilator","Under the door","Inside a water pipe"],answer:1,explanation:"A ventilator connecting the rooms allows the snake to pass from Roylott's room toward the bed."},
-{type:"mc",q:"What does Roylott use to summon the snake back?",options:["A whistle","A bell","A tuning fork","A hand clap"],answer:0,explanation:"A low whistle is part of Roylott's method for recalling the snake."},
-{type:"mc",q:"What animal besides the snake roams the grounds of Stoke Moran?",options:["A wolf","A cheetah","A bear","A leopard"],answer:1,explanation:"Roylott keeps exotic animals, including a cheetah and a baboon, which roam freely."},
-{type:"mc",q:"How does Holmes drive the snake back through the ventilator?",options:["With smoke","With his cane","With a pistol shot","With boiling water"],answer:1,explanation:"Holmes strikes at the creature with his cane, sending it back through the ventilator toward Roylott."}
-]},
-{id:4,rank:"Detective",title:"The Red-Headed League",description:"A strange vacancy, a pawnbroker, and a plot beneath London's streets.",points:20,questions:[
-{type:"mc",q:"Who brings the Red-Headed League mystery to Holmes?",options:["Jabez Wilson","John Clay","Vincent Spaulding","Peter Jones"],answer:0,explanation:"Pawnbroker Jabez Wilson asks Holmes to explain his bizarre employment and the League's disappearance."},
-{type:"mc",q:"What work is Wilson paid to perform for the League?",options:["Copy the Encyclopaedia Britannica","Translate French newspapers","Count banknotes","Catalog red-haired Londoners"],answer:0,explanation:"Wilson is paid four pounds a week to copy the Encyclopaedia Britannica by hand."},
-{type:"text",q:"What is the real name of Wilson's assistant Vincent Spaulding?",accept:["John Clay","Clay"],explanation:"Vincent Spaulding is the alias used by the criminal John Clay."},
-{type:"mc",q:"Why is the League job created?",options:["To test Wilson's handwriting","To lure Wilson away from his shop","To recruit criminals","To steal Wilson's identity"],answer:1,explanation:"The absurd job keeps Wilson away for hours while Clay works beneath the pawnshop."},
-{type:"mc",q:"What is Clay secretly constructing?",options:["A hidden room","A tunnel","A printing press","A trapdoor"],answer:1,explanation:"Clay and his accomplice tunnel from Wilson's cellar toward the neighboring bank."},
-{type:"mc",q:"What valuable target lies near Wilson's shop?",options:["The Crown Jewels","French gold at a bank","A diamond warehouse","Government bonds"],answer:1,explanation:"The criminals intend to reach a bank cellar containing a large quantity of French gold."},
-{type:"mc",q:"What detail about Spaulding's trousers helps Holmes confirm his theory?",options:["They are wet","Their knees are worn and stained","They contain red clay","They are new"],answer:1,explanation:"The condition of the assistant's trouser knees supports Holmes's deduction that he has been digging."},
-{type:"text",q:"On what day does Holmes expect the robbery attempt?",accept:["Saturday","Saturday night"],explanation:"Holmes reasons that Saturday gives the criminals extra time before the bank reopens on Monday."},
-{type:"mc",q:"Where do Holmes and the police wait for the criminals?",options:["Wilson's bedroom","The bank vault","A railway station","The League office"],answer:1,explanation:"Holmes, Watson, Jones, and the bank director wait in darkness in the bank's underground strong-room."},
-{type:"mc",q:"What happens to the Red-Headed League before Wilson visits Holmes?",options:["It doubles his wages","It suddenly dissolves","It moves to Paris","It reports him to police"],answer:1,explanation:"Wilson arrives for work to find a notice announcing that the Red-Headed League has been dissolved."}
-]},
-{id:5,rank:"Master Detective",title:"The Final Problem",description:"Professor Moriarty, continental pursuit, and the road to Reichenbach.",points:20,questions:[
-{type:"mc",q:"Whom does Holmes call the 'Napoleon of crime'?",options:["Colonel Moran","Professor Moriarty","Charles Augustus Milverton","John Clay"],answer:1,explanation:"Holmes describes Professor Moriarty as the organizing genius behind a vast criminal network."},
-{type:"mc",q:"What is Moriarty's academic specialty?",options:["Chemistry","Mathematics","Astronomy","Classics"],answer:1,explanation:"Moriarty is a mathematical genius and former professor whose work earned him academic distinction."},
-{type:"mc",q:"To which country do Holmes and Watson travel while fleeing Moriarty?",options:["Switzerland","Spain","Norway","Russia"],answer:0,explanation:"Their journey ultimately takes them into Switzerland and toward Meiringen."},
-{type:"text",q:"What waterfall becomes the setting of Holmes and Moriarty's confrontation?",accept:["Reichenbach Falls","the Reichenbach Falls","Reichenbach"],explanation:"The apparent final struggle takes place beside the Reichenbach Falls near Meiringen."},
-{type:"mc",q:"How is Watson lured away from Holmes near the falls?",options:["A telegram from London","A message about a sick Englishwoman","A police summons","A note from Mycroft"],answer:1,explanation:"Watson receives a false request to attend an Englishwoman supposedly in urgent need of a doctor."},
-{type:"mc",q:"What does Watson find when he returns to the falls?",options:["Holmes waiting safely","Moriarty under arrest","Holmes's note","Mycroft's carriage"],answer:2,explanation:"Holmes has left Watson a note explaining that Moriarty has allowed him time to write a farewell."},
-{type:"mc",q:"What physical evidence suggests two men approached the edge?",options:["Two walking sticks","Footprints leading toward the falls","Two discarded coats","Blood on the path"],answer:1,explanation:"Watson observes tracks going toward the end of the path and no returning footprints."},
-{type:"text",q:"What is Moriarty's title?",accept:["Professor","professor"],explanation:"Throughout the Canon Holmes's great criminal adversary is known as Professor Moriarty."},
-{type:"mc",q:"Which story later reveals that Holmes survived?",options:["The Empty House","Silver Blaze","The Second Stain","Black Peter"],answer:0,explanation:"The Adventure of the Empty House brings Holmes back to London and explains his survival."},
-{type:"mc",q:"Who becomes the principal threat to Holmes after Moriarty's death?",options:["Colonel Sebastian Moran","Inspector Gregson","Baron Gruner","Dr. Roylott"],answer:0,explanation:"Colonel Sebastian Moran, Moriarty's associate and a deadly marksman, hunts Holmes after Reichenbach."}
-]}
+const LEVELS=[];
+const PASS_SCORE=70;
+const RANKS=[
+  {min:0,name:"New Lodger"},
+  {min:4,name:"Baker Street Regular"},
+  {min:8,name:"Investigator"},
+  {min:12,name:"Consulting Detective"},
+  {min:16,name:"Senior Detective"},
+  {min:20,name:"Master of Deduction"},
+  {min:24,name:"Canon Master"}
 ];
